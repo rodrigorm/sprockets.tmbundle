@@ -5,7 +5,9 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>echo "//= require \"$TM_DROPPED_FILE\""</string>
+	<string>#!/usr/bin/env ruby
+file = ENV["TM_DROPPED_FILE"]
+print "//= require \"" + file[0..-4] + "\"\n"</string>
 	<key>draggedFileExtensions</key>
 	<array>
 		<string>js</string>
